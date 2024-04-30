@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateTaskRequest;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -15,7 +16,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return TaskResource::collection(Task::all());
+        $tasks = Task::where('user_id', Auth::user()->id)->get();
+        return TaskResource::collection($tasks);
     }
 
     /**
@@ -23,7 +25,14 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        $task = Task::create($request->all());
+
+        $task = Task::create([
+            // 'user_id' => auth()->user()->id,
+            'user_id' => Auth::user()->id,
+            'name' => $request->name,
+            'description' => $request->description,
+            'priority' => $request->priority,
+        ]);
         return new TaskResource($task);
     }
 
@@ -32,6 +41,10 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
+        if ($task->user_id != Auth::user()->id) {
+            return response()->json(['message' => 'Your are not allowed to make this request.'], 403);
+        }
+
         return new TaskResource($task);
     }
 
@@ -40,6 +53,10 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
+        if ($task->user_id != Auth::user()->id) {
+            return response()->json(['message' => 'Your are not allowed to make this request.'], 403);
+        }
+
         $task->update($request->all());
         return new TaskResource($task);
     }
@@ -49,6 +66,10 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        if ($task->user_id != Auth::user()->id) {
+            return response()->json(['message' => 'Your are not allowed to make this request.'], 403);
+        }
+
         $task->delete();
         return response()->noContent();
     }
