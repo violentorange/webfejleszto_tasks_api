@@ -1,0 +1,167 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "webfejleszto_tasks",
+    "dateExported": "2024-04-30T14:30:35.426Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "817806c0-0581-4aef-9799-57770833f023",
+            "name": "Tasks",
+            "containerId": "",
+            "created": "2024-04-30T14:22:09.997Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "423e8560-3c89-43e6-ad3d-39a10e40992e",
+            "colId": "1731ad98-4984-47d2-996c-051402c7d571",
+            "containerId": "817806c0-0581-4aef-9799-57770833f023",
+            "name": "Get all",
+            "url": "http://127.0.0.1:8000/api/tasks",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-30T14:22:49.374Z",
+            "modified": "2024-04-30T14:23:28.126Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9395b8e2-b7ea-40bd-b858-246c8126b72d",
+            "colId": "1731ad98-4984-47d2-996c-051402c7d571",
+            "containerId": "817806c0-0581-4aef-9799-57770833f023",
+            "name": "Search",
+            "url": "http://127.0.0.1:8000/api/tasks/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-30T14:24:30.532Z",
+            "modified": "2024-04-30T14:25:05.839Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ae5c96da-69a7-44c6-9c8d-1691a2fcf972",
+            "colId": "1731ad98-4984-47d2-996c-051402c7d571",
+            "containerId": "817806c0-0581-4aef-9799-57770833f023",
+            "name": "Create",
+            "url": "http://127.0.0.1:8000/api/tasks/51",
+            "method": "PATCH",
+            "sortNum": 25000,
+            "created": "2024-04-30T14:26:13.035Z",
+            "modified": "2024-04-30T14:29:46.912Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"priority\" : \"High\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "67fe4c3d-8329-4805-8130-1feba84cbc23",
+            "colId": "1731ad98-4984-47d2-996c-051402c7d571",
+            "containerId": "817806c0-0581-4aef-9799-57770833f023",
+            "name": "Update",
+            "url": "http://127.0.0.1:8000/api/tasks",
+            "method": "POST",
+            "sortNum": 27500,
+            "created": "2024-04-30T14:28:54.170Z",
+            "modified": "2024-04-30T14:28:54.170Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"My first task\",\n  \"description\" : \"description\",\n  \"priority\" : \"Low\",\n  \"user_id\" : 10\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1f11bdd3-ebf6-4ff3-aafe-ab4bdb530576",
+            "colId": "1731ad98-4984-47d2-996c-051402c7d571",
+            "containerId": "817806c0-0581-4aef-9799-57770833f023",
+            "name": "Delete",
+            "url": "http://127.0.0.1:8000/api/tasks/1",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-04-30T14:25:18.580Z",
+            "modified": "2024-04-30T14:25:41.800Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
